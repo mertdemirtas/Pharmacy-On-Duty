@@ -29,6 +29,12 @@
 		40724822286FA95C00693E07 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 40724821286FA95C00693E07 /* RxRelay */; };
 		40724824286FA95C00693E07 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 40724823286FA95C00693E07 /* RxSwift */; };
 		40724827286FA99C00693E07 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 40724826286FA99C00693E07 /* Alamofire */; };
+		4072482A286FAD4000693E07 /* DashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724829286FAD4000693E07 /* DashboardTabBarController.swift */; };
+		4072482F286FAFE000693E07 /* PharmacyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4072482E286FAFE000693E07 /* PharmacyModel.swift */; };
+		40724831286FB03B00693E07 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724830286FB03B00693E07 /* NetworkManager.swift */; };
+		40724833286FB05500693E07 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724832286FB05500693E07 /* Endpoint.swift */; };
+		40724835286FB06500693E07 /* EndpointCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724834286FB06500693E07 /* EndpointCases.swift */; };
+		40724837286FB07600693E07 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724836286FB07600693E07 /* NetworkConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +57,12 @@
 		40724815286FA87F00693E07 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		40724817286FA8EA00693E07 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4072481A286FA93900693E07 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		40724829286FAD4000693E07 /* DashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabBarController.swift; sourceTree = "<group>"; };
+		4072482E286FAFE000693E07 /* PharmacyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyModel.swift; sourceTree = "<group>"; };
+		40724830286FB03B00693E07 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		40724832286FB05500693E07 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		40724834286FB06500693E07 /* EndpointCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointCases.swift; sourceTree = "<group>"; };
+		40724836286FB07600693E07 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,8 @@
 		407247E4286FA11000693E07 /* Pharmacy On-Duty */ = {
 			isa = PBXGroup;
 			children = (
+				4072482B286FAFBA00693E07 /* Network */,
+				40724828286FAD2800693E07 /* Components */,
 				40724819286FA91600693E07 /* Support Files */,
 				40724814286FA87100693E07 /* Extensions */,
 				40724803286FA26900693E07 /* Base Components */,
@@ -164,6 +178,42 @@
 				4072481A286FA93900693E07 /* BaseViewModel.swift */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		40724828286FAD2800693E07 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				40724829286FAD4000693E07 /* DashboardTabBarController.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4072482B286FAFBA00693E07 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4072482D286FAFCE00693E07 /* Model */,
+				4072482C286FAFCA00693E07 /* Manager */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4072482C286FAFCA00693E07 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				40724830286FB03B00693E07 /* NetworkManager.swift */,
+				40724832286FB05500693E07 /* Endpoint.swift */,
+				40724834286FB06500693E07 /* EndpointCases.swift */,
+				40724836286FB07600693E07 /* NetworkConstants.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		4072482D286FAFCE00693E07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4072482E286FAFE000693E07 /* PharmacyModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,15 +297,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40724837286FB07600693E07 /* NetworkConstants.swift in Sources */,
+				40724831286FB03B00693E07 /* NetworkManager.swift in Sources */,
 				4072480B286FA2B300693E07 /* BaseTableViewCell.swift in Sources */,
 				40724805286FA28100693E07 /* BaseViewController.swift in Sources */,
+				4072482A286FAD4000693E07 /* DashboardTabBarController.swift in Sources */,
 				40724809286FA2A200693E07 /* BaseTableView.swift in Sources */,
 				40724802286FA26500693E07 /* MainPageViewModel.swift in Sources */,
+				40724835286FB06500693E07 /* EndpointCases.swift in Sources */,
 				407247E6286FA11000693E07 /* AppDelegate.swift in Sources */,
 				4072480D286FA2C100693E07 /* GenericBaseView.swift in Sources */,
 				4072480F286FA2D800693E07 /* BaseButton.swift in Sources */,
 				40724807286FA29300693E07 /* BaseView.swift in Sources */,
 				40724818286FA8EA00693E07 /* UIView+Extension.swift in Sources */,
+				4072482F286FAFE000693E07 /* PharmacyModel.swift in Sources */,
+				40724833286FB05500693E07 /* Endpoint.swift in Sources */,
 				40724811286FA2F100693E07 /* BaseLabel.swift in Sources */,
 				40724813286FA37200693E07 /* GenericTableViewCell.swift in Sources */,
 				4072481B286FA93900693E07 /* BaseViewModel.swift in Sources */,
