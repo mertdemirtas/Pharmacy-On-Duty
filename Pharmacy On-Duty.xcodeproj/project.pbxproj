@@ -8,22 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		407247E6286FA11000693E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407247E5286FA11000693E07 /* AppDelegate.swift */; };
-		407247E8286FA11000693E07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407247E7286FA11000693E07 /* SceneDelegate.swift */; };
-		407247EA286FA11000693E07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407247E9286FA11000693E07 /* ViewController.swift */; };
-		407247ED286FA11000693E07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407247EB286FA11000693E07 /* Main.storyboard */; };
 		407247EF286FA11200693E07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 407247EE286FA11200693E07 /* Assets.xcassets */; };
 		407247F2286FA11200693E07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407247F0286FA11200693E07 /* LaunchScreen.storyboard */; };
+		407247FE286FA23200693E07 /* MainPageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407247FD286FA23200693E07 /* MainPageBuilder.swift */; };
+		40724800286FA25A00693E07 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407247FF286FA25A00693E07 /* MainPageViewController.swift */; };
+		40724802286FA26500693E07 /* MainPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724801286FA26500693E07 /* MainPageViewModel.swift */; };
+		40724805286FA28100693E07 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724804286FA28100693E07 /* BaseViewController.swift */; };
+		40724807286FA29300693E07 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724806286FA29300693E07 /* BaseView.swift */; };
+		40724809286FA2A200693E07 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724808286FA2A200693E07 /* BaseTableView.swift */; };
+		4072480B286FA2B300693E07 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4072480A286FA2B300693E07 /* BaseTableViewCell.swift */; };
+		4072480D286FA2C100693E07 /* GenericBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4072480C286FA2C100693E07 /* GenericBaseView.swift */; };
+		4072480F286FA2D800693E07 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4072480E286FA2D800693E07 /* BaseButton.swift */; };
+		40724811286FA2F100693E07 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724810286FA2F100693E07 /* BaseLabel.swift */; };
+		40724813286FA37200693E07 /* GenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724812286FA37200693E07 /* GenericTableViewCell.swift */; };
+		40724816286FA87F00693E07 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724815286FA87F00693E07 /* UIColor+Extension.swift */; };
+		40724818286FA8EA00693E07 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724817286FA8EA00693E07 /* UIView+Extension.swift */; };
+		4072481B286FA93900693E07 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4072481A286FA93900693E07 /* BaseViewModel.swift */; };
+		4072481E286FA95C00693E07 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 4072481D286FA95C00693E07 /* RxBlocking */; };
+		40724820286FA95C00693E07 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 4072481F286FA95C00693E07 /* RxCocoa */; };
+		40724822286FA95C00693E07 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 40724821286FA95C00693E07 /* RxRelay */; };
+		40724824286FA95C00693E07 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 40724823286FA95C00693E07 /* RxSwift */; };
+		40724827286FA99C00693E07 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 40724826286FA99C00693E07 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		407247E2286FA11000693E07 /* Pharmacy On-Duty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pharmacy On-Duty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		407247E5286FA11000693E07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		407247E7286FA11000693E07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		407247E9286FA11000693E07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		407247EC286FA11000693E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		407247EE286FA11200693E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		407247F1286FA11200693E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		407247F3286FA11200693E07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		407247FD286FA23200693E07 /* MainPageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageBuilder.swift; sourceTree = "<group>"; };
+		407247FF286FA25A00693E07 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		40724801286FA26500693E07 /* MainPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewModel.swift; sourceTree = "<group>"; };
+		40724804286FA28100693E07 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		40724806286FA29300693E07 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		40724808286FA2A200693E07 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		4072480A286FA2B300693E07 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		4072480C286FA2C100693E07 /* GenericBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericBaseView.swift; sourceTree = "<group>"; };
+		4072480E286FA2D800693E07 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		40724810286FA2F100693E07 /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
+		40724812286FA37200693E07 /* GenericTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewCell.swift; sourceTree = "<group>"; };
+		40724815286FA87F00693E07 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		40724817286FA8EA00693E07 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		4072481A286FA93900693E07 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +58,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40724827286FA99C00693E07 /* Alamofire in Frameworks */,
+				40724822286FA95C00693E07 /* RxRelay in Frameworks */,
+				40724820286FA95C00693E07 /* RxCocoa in Frameworks */,
+				40724824286FA95C00693E07 /* RxSwift in Frameworks */,
+				4072481E286FA95C00693E07 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +88,82 @@
 		407247E4286FA11000693E07 /* Pharmacy On-Duty */ = {
 			isa = PBXGroup;
 			children = (
-				407247E5286FA11000693E07 /* AppDelegate.swift */,
-				407247E7286FA11000693E07 /* SceneDelegate.swift */,
-				407247E9286FA11000693E07 /* ViewController.swift */,
-				407247EB286FA11000693E07 /* Main.storyboard */,
-				407247EE286FA11200693E07 /* Assets.xcassets */,
+				40724819286FA91600693E07 /* Support Files */,
+				40724814286FA87100693E07 /* Extensions */,
+				40724803286FA26900693E07 /* Base Components */,
+				407247FB286FA20500693E07 /* Screens */,
+				407247F9286FA1B700693E07 /* App Files */,
+				407247FA286FA1CA00693E07 /* Assets */,
 				407247F0286FA11200693E07 /* LaunchScreen.storyboard */,
 				407247F3286FA11200693E07 /* Info.plist */,
 			);
 			path = "Pharmacy On-Duty";
+			sourceTree = "<group>";
+		};
+		407247F9286FA1B700693E07 /* App Files */ = {
+			isa = PBXGroup;
+			children = (
+				407247E5286FA11000693E07 /* AppDelegate.swift */,
+			);
+			path = "App Files";
+			sourceTree = "<group>";
+		};
+		407247FA286FA1CA00693E07 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				407247EE286FA11200693E07 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		407247FB286FA20500693E07 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				407247FC286FA20E00693E07 /* Main Page */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		407247FC286FA20E00693E07 /* Main Page */ = {
+			isa = PBXGroup;
+			children = (
+				407247FD286FA23200693E07 /* MainPageBuilder.swift */,
+				407247FF286FA25A00693E07 /* MainPageViewController.swift */,
+				40724801286FA26500693E07 /* MainPageViewModel.swift */,
+			);
+			path = "Main Page";
+			sourceTree = "<group>";
+		};
+		40724803286FA26900693E07 /* Base Components */ = {
+			isa = PBXGroup;
+			children = (
+				40724804286FA28100693E07 /* BaseViewController.swift */,
+				40724806286FA29300693E07 /* BaseView.swift */,
+				40724808286FA2A200693E07 /* BaseTableView.swift */,
+				4072480A286FA2B300693E07 /* BaseTableViewCell.swift */,
+				4072480C286FA2C100693E07 /* GenericBaseView.swift */,
+				4072480E286FA2D800693E07 /* BaseButton.swift */,
+				40724810286FA2F100693E07 /* BaseLabel.swift */,
+				40724812286FA37200693E07 /* GenericTableViewCell.swift */,
+			);
+			path = "Base Components";
+			sourceTree = "<group>";
+		};
+		40724814286FA87100693E07 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				40724815286FA87F00693E07 /* UIColor+Extension.swift */,
+				40724817286FA8EA00693E07 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		40724819286FA91600693E07 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4072481A286FA93900693E07 /* BaseViewModel.swift */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +182,13 @@
 			dependencies = (
 			);
 			name = "Pharmacy On-Duty";
+			packageProductDependencies = (
+				4072481D286FA95C00693E07 /* RxBlocking */,
+				4072481F286FA95C00693E07 /* RxCocoa */,
+				40724821286FA95C00693E07 /* RxRelay */,
+				40724823286FA95C00693E07 /* RxSwift */,
+				40724826286FA99C00693E07 /* Alamofire */,
+			);
 			productName = "Pharmacy On-Duty";
 			productReference = 407247E2286FA11000693E07 /* Pharmacy On-Duty.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +217,10 @@
 				Base,
 			);
 			mainGroup = 407247D9286FA11000693E07;
+			packageReferences = (
+				4072481C286FA95C00693E07 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				40724825286FA99C00693E07 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 407247E3286FA11000693E07 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +237,6 @@
 			files = (
 				407247F2286FA11200693E07 /* LaunchScreen.storyboard in Resources */,
 				407247EF286FA11200693E07 /* Assets.xcassets in Resources */,
-				407247ED286FA11000693E07 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +247,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407247EA286FA11000693E07 /* ViewController.swift in Sources */,
+				4072480B286FA2B300693E07 /* BaseTableViewCell.swift in Sources */,
+				40724805286FA28100693E07 /* BaseViewController.swift in Sources */,
+				40724809286FA2A200693E07 /* BaseTableView.swift in Sources */,
+				40724802286FA26500693E07 /* MainPageViewModel.swift in Sources */,
 				407247E6286FA11000693E07 /* AppDelegate.swift in Sources */,
-				407247E8286FA11000693E07 /* SceneDelegate.swift in Sources */,
+				4072480D286FA2C100693E07 /* GenericBaseView.swift in Sources */,
+				4072480F286FA2D800693E07 /* BaseButton.swift in Sources */,
+				40724807286FA29300693E07 /* BaseView.swift in Sources */,
+				40724818286FA8EA00693E07 /* UIView+Extension.swift in Sources */,
+				40724811286FA2F100693E07 /* BaseLabel.swift in Sources */,
+				40724813286FA37200693E07 /* GenericTableViewCell.swift in Sources */,
+				4072481B286FA93900693E07 /* BaseViewModel.swift in Sources */,
+				40724816286FA87F00693E07 /* UIColor+Extension.swift in Sources */,
+				40724800286FA25A00693E07 /* MainPageViewController.swift in Sources */,
+				407247FE286FA23200693E07 /* MainPageBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		407247EB286FA11000693E07 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				407247EC286FA11000693E07 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		407247F0286FA11200693E07 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,21 +403,23 @@
 				DEVELOPMENT_TEAM = AYUDH4AXL5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pharmacy On-Duty/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Nobetci Eczane";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mertdemirtas.Pharmacy-On-Duty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,21 +433,23 @@
 				DEVELOPMENT_TEAM = AYUDH4AXL5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pharmacy On-Duty/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Nobetci Eczane";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mertdemirtas.Pharmacy-On-Duty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -358,6 +475,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4072481C286FA95C00693E07 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		40724825286FA99C00693E07 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4072481D286FA95C00693E07 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4072481C286FA95C00693E07 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		4072481F286FA95C00693E07 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4072481C286FA95C00693E07 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		40724821286FA95C00693E07 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4072481C286FA95C00693E07 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		40724823286FA95C00693E07 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4072481C286FA95C00693E07 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		40724826286FA99C00693E07 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40724825286FA99C00693E07 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 407247DA286FA11000693E07 /* Project object */;
 }
