@@ -29,12 +29,16 @@
 		40724822286FA95C00693E07 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 40724821286FA95C00693E07 /* RxRelay */; };
 		40724824286FA95C00693E07 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 40724823286FA95C00693E07 /* RxSwift */; };
 		40724827286FA99C00693E07 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 40724826286FA99C00693E07 /* Alamofire */; };
-		4072482A286FAD4000693E07 /* DashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724829286FAD4000693E07 /* DashboardTabBarController.swift */; };
 		4072482F286FAFE000693E07 /* PharmacyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4072482E286FAFE000693E07 /* PharmacyModel.swift */; };
 		40724831286FB03B00693E07 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724830286FB03B00693E07 /* NetworkManager.swift */; };
 		40724833286FB05500693E07 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724832286FB05500693E07 /* Endpoint.swift */; };
 		40724835286FB06500693E07 /* EndpointCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724834286FB06500693E07 /* EndpointCases.swift */; };
 		40724837286FB07600693E07 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40724836286FB07600693E07 /* NetworkConstants.swift */; };
+		4072483A28704C3700693E07 /* CityPickerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4072483928704C3700693E07 /* CityPickerCardView.swift */; };
+		4072484028704D1300693E07 /* OperationButtonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4072483F28704D1300693E07 /* OperationButtonCardView.swift */; };
+		4072484228704D6500693E07 /* OperationButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4072484128704D6500693E07 /* OperationButtonContainerView.swift */; };
+		407248442870595300693E07 /* GenericDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407248432870595300693E07 /* GenericDataProtocol.swift */; };
+		407248462870596700693E07 /* OperationButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407248452870596700693E07 /* OperationButtonData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,12 +61,16 @@
 		40724815286FA87F00693E07 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		40724817286FA8EA00693E07 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4072481A286FA93900693E07 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		40724829286FAD4000693E07 /* DashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabBarController.swift; sourceTree = "<group>"; };
 		4072482E286FAFE000693E07 /* PharmacyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyModel.swift; sourceTree = "<group>"; };
 		40724830286FB03B00693E07 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		40724832286FB05500693E07 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		40724834286FB06500693E07 /* EndpointCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointCases.swift; sourceTree = "<group>"; };
 		40724836286FB07600693E07 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		4072483928704C3700693E07 /* CityPickerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerCardView.swift; sourceTree = "<group>"; };
+		4072483F28704D1300693E07 /* OperationButtonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationButtonCardView.swift; sourceTree = "<group>"; };
+		4072484128704D6500693E07 /* OperationButtonContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationButtonContainerView.swift; sourceTree = "<group>"; };
+		407248432870595300693E07 /* GenericDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDataProtocol.swift; sourceTree = "<group>"; };
+		407248452870596700693E07 /* OperationButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationButtonData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,14 +108,14 @@
 		407247E4286FA11000693E07 /* Pharmacy On-Duty */ = {
 			isa = PBXGroup;
 			children = (
-				4072482B286FAFBA00693E07 /* Network */,
-				40724828286FAD2800693E07 /* Components */,
-				40724819286FA91600693E07 /* Support Files */,
-				40724814286FA87100693E07 /* Extensions */,
-				40724803286FA26900693E07 /* Base Components */,
-				407247FB286FA20500693E07 /* Screens */,
 				407247F9286FA1B700693E07 /* App Files */,
 				407247FA286FA1CA00693E07 /* Assets */,
+				40724819286FA91600693E07 /* Support Files */,
+				40724803286FA26900693E07 /* Base Components */,
+				40724828286FAD2800693E07 /* Components */,
+				4072482B286FAFBA00693E07 /* Network */,
+				40724814286FA87100693E07 /* Extensions */,
+				407247FB286FA20500693E07 /* Screens */,
 				407247F0286FA11200693E07 /* LaunchScreen.storyboard */,
 				407247F3286FA11200693E07 /* Info.plist */,
 			);
@@ -176,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				4072481A286FA93900693E07 /* BaseViewModel.swift */,
+				407248432870595300693E07 /* GenericDataProtocol.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -183,7 +192,8 @@
 		40724828286FAD2800693E07 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				40724829286FAD4000693E07 /* DashboardTabBarController.swift */,
+				4072483B28704CD800693E07 /* OperationButton */,
+				4072483828704BFF00693E07 /* CityPicker */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -214,6 +224,24 @@
 				4072482E286FAFE000693E07 /* PharmacyModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4072483828704BFF00693E07 /* CityPicker */ = {
+			isa = PBXGroup;
+			children = (
+				4072483928704C3700693E07 /* CityPickerCardView.swift */,
+			);
+			path = CityPicker;
+			sourceTree = "<group>";
+		};
+		4072483B28704CD800693E07 /* OperationButton */ = {
+			isa = PBXGroup;
+			children = (
+				4072483F28704D1300693E07 /* OperationButtonCardView.swift */,
+				4072484128704D6500693E07 /* OperationButtonContainerView.swift */,
+				407248452870596700693E07 /* OperationButtonData.swift */,
+			);
+			path = OperationButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,24 +326,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				40724837286FB07600693E07 /* NetworkConstants.swift in Sources */,
+				4072484228704D6500693E07 /* OperationButtonContainerView.swift in Sources */,
 				40724831286FB03B00693E07 /* NetworkManager.swift in Sources */,
 				4072480B286FA2B300693E07 /* BaseTableViewCell.swift in Sources */,
 				40724805286FA28100693E07 /* BaseViewController.swift in Sources */,
-				4072482A286FAD4000693E07 /* DashboardTabBarController.swift in Sources */,
 				40724809286FA2A200693E07 /* BaseTableView.swift in Sources */,
 				40724802286FA26500693E07 /* MainPageViewModel.swift in Sources */,
 				40724835286FB06500693E07 /* EndpointCases.swift in Sources */,
 				407247E6286FA11000693E07 /* AppDelegate.swift in Sources */,
 				4072480D286FA2C100693E07 /* GenericBaseView.swift in Sources */,
+				407248462870596700693E07 /* OperationButtonData.swift in Sources */,
 				4072480F286FA2D800693E07 /* BaseButton.swift in Sources */,
 				40724807286FA29300693E07 /* BaseView.swift in Sources */,
 				40724818286FA8EA00693E07 /* UIView+Extension.swift in Sources */,
+				4072484028704D1300693E07 /* OperationButtonCardView.swift in Sources */,
 				4072482F286FAFE000693E07 /* PharmacyModel.swift in Sources */,
 				40724833286FB05500693E07 /* Endpoint.swift in Sources */,
 				40724811286FA2F100693E07 /* BaseLabel.swift in Sources */,
 				40724813286FA37200693E07 /* GenericTableViewCell.swift in Sources */,
 				4072481B286FA93900693E07 /* BaseViewModel.swift in Sources */,
+				4072483A28704C3700693E07 /* CityPickerCardView.swift in Sources */,
 				40724816286FA87F00693E07 /* UIColor+Extension.swift in Sources */,
+				407248442870595300693E07 /* GenericDataProtocol.swift in Sources */,
 				40724800286FA25A00693E07 /* MainPageViewController.swift in Sources */,
 				407247FE286FA23200693E07 /* MainPageBuilder.swift in Sources */,
 			);

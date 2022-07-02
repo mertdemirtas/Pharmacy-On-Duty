@@ -12,7 +12,7 @@ class MainPageBuilder {
     class func build() -> UIViewController {
         let viewModel = MainPageViewModel()
         let viewController = MainPageViewController(viewModel: viewModel)
-        viewController.title = "Ana Ekran"
+        viewController.title = "Nöbetçi Eczane"
         return viewController
     }
 }

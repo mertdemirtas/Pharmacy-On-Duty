@@ -38,12 +38,7 @@ class BaseButton<T>: GenericBaseView<T>, UIGestureRecognizerDelegate {
     
     override func setupViewConfigurations() {
         prepareShadowView()
-        addComponents()
         addTapGesture()
-    }
-    
-    private func addComponents() {
-        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func addTapGesture() {
