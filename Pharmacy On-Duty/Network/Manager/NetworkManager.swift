@@ -20,11 +20,12 @@ class NetworkManager {
         // MARK: HTTP Method
         urlRequest.httpMethod = endPoint.httpMethod
         
-        // Header fields
+        // MARK: Header fields
         endPoint.headers?.forEach({ header in
             urlRequest.setValue(header.value, forHTTPHeaderField: header.name)
         })
         
+        // MARK: Request
         AF.request(urlRequest).responseDecodable(of: T.self) { response in
             switch response.result {
             case .success(let data):

@@ -16,15 +16,15 @@ class GenericTableViewCell<Data, View: GenericBaseView<Data>>: BaseTableViewCell
     }()
     
     override func addMajorViewComponents() {
-        addSubview(genericView)
+        self.contentView.addSubview(genericView)
     }
     
     override func setupViewConfigurations() {
         NSLayoutConstraint.activate([
-            genericView.topAnchor.constraint(equalTo: topAnchor, constant: 8.0),
-            genericView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
-            genericView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
-            genericView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8.0)
+            genericView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8.0),
+            genericView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16.0),
+            genericView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16.0),
+            genericView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8.0)
         ])
     }
     

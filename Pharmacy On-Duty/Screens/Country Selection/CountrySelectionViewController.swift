@@ -45,7 +45,7 @@ class CountrySelectionViewController: BaseViewController<CountrySelectionViewMod
             case .country(let data):
                 let cell : CityCardTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "CityCardTableViewCell", for: IndexPath(item: index, section: 0)) as! CityCardTableViewCell
                 cell.setData(data: CityData(name: data.ilceAd))
-                cell.setButtonAction {
+                cell.genericView.setButtonAction {
                     self.navigationController?.pushViewController(ResultPageBuilder.build(city: self.viewModel.cityName ?? "", country: data.ilceSlug ?? ""), animated: true)
                 }
                 return cell

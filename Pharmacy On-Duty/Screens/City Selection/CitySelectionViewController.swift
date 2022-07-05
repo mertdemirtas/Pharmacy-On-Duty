@@ -45,7 +45,7 @@ class CitySelectionViewController: BaseViewController<CitySelectionViewModel> {
             case .city(let data):
                 let cell : CityCardTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "CityCardTableViewCell", for: IndexPath(item: index, section: 0)) as! CityCardTableViewCell
                 cell.setData(data: CityData(name: data.sehirAd))
-                cell.setButtonAction {
+                cell.genericView.setButtonAction {
                     self.navigationController?.pushViewController(CountrySelectionBuilder.build(cityName: data.sehirSlug), animated: true)
                 }
                 return cell

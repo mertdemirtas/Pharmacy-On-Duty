@@ -10,7 +10,6 @@ import UIKit
 class BaseTableViewCell: UITableViewCell {
         
     private var seperator: BaseView?
-    private var buttonTapCallback: () -> () = {}
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,33 +33,8 @@ class BaseTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        addTapGesture()
     }
-    
-    private func addTapGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(BaseTableViewCell.buttonTapped))
-        tap.delegate = self
-        addGestureRecognizer(tap)
-    }
-    
-    @objc fileprivate func buttonTapped(_ sender: UITapGestureRecognizer) {
-        isUserInteractionEnabled = false
-        startTappedAnimation { finish in
-            if finish {
-                self.isUserInteractionEnabled = true
-                self.buttonTappedAction()
-            }
-        }
-    }
-    
-    func setButtonAction(action:@escaping () -> ()) {
-        self.buttonTapCallback = action
-    }
-    
-    private func buttonTappedAction() {
-        buttonTapCallback()
-    }
-    
+
     func addMajorViewComponents() { }
     
     func setupViewConfigurations() { }

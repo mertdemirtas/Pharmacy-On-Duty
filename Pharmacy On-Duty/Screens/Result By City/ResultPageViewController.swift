@@ -53,7 +53,7 @@ class ResultPageViewController: BaseViewController<ResultPageViewModel> {
                 let cell : PharmacyListTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "PharmacyListTableViewCell", for: IndexPath(item: index, section: 0)) as! PharmacyListTableViewCell
                 let convertedData = PharmacyListCardData(title: data.eczaneAdi, adress: data.adresi, latitude: String(data.latitude ?? 0.0), longtitude: String(data.longitude ?? 0.0), distance: "")
                 cell.setData(data: convertedData)
-                cell.setButtonAction {
+                cell.genericView.setButtonAction {
                     self.navigationController?.pushViewController(DetailPageBuilder.build(data: data), animated: true)
                 }
                 return cell
