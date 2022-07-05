@@ -13,15 +13,26 @@
 import Foundation
 
 // MARK: - PharmacyModel
-struct PharmacyModel {
-    let status, message: String?
-    let rowCount: Int?
-    let data: [Datum]?
+struct PharmacyModel: Codable {
+    var status, message: String?
+    var rowCount: Int?
+    var data: [Datum]?
 }
 
 // MARK: - Datum
-struct Datum {
-    let eczaneAdi, adresi, semt, yolTarifi: String?
-    let telefon, telefon2, sehir, ilce: String?
-    let latitude, longitude: Double?
+struct Datum: Codable {
+    var eczaneAdi, adresi, semt, yolTarifi: String?
+    var telefon, telefon2, sehir, ilce: String?
+    var latitude, longitude: Double?
+
+    enum CodingKeys: String, CodingKey {
+        case eczaneAdi = "EczaneAdi"
+        case adresi = "Adresi"
+        case semt = "Semt"
+        case yolTarifi = "YolTarifi"
+        case telefon = "Telefon"
+        case telefon2 = "Telefon2"
+        case sehir = "Sehir"
+        case ilce, latitude, longitude
+    }
 }

@@ -21,17 +21,23 @@ class MainPageViewController: BaseViewController<MainPageViewModel> {
         return temp
     }()
     
-    private lazy var operationButtonByCountry: OperationButtonCardView = {
-        let temp = OperationButtonCardView()
-        temp.setData(by: OperationButtonData(image: "eczane", titleText: "İl - İlçe Bilgisine Göre Ara"))
+    private lazy var operationButtonByLocation: OperationButtonCardButton = {
+        let temp = OperationButtonCardButton()
+        temp.setData(by: OperationButtonData(image: "location", titleText: "Şu Anki Konumuma Göre Ara"))
         temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.setButtonAction {
+         //   self.navigationController?.pushViewController(ResultPageBuilder.build(), animated: true)
+        }
         return temp
     }()
     
-    private lazy var operationButtonByLocation: OperationButtonCardView = {
-        let temp = OperationButtonCardView()
-        temp.setData(by: OperationButtonData(image: "location", titleText: "Şu Anki Konumuma Göre Ara"))
+    private lazy var operationButtonByCountry: OperationButtonCardButton = {
+        let temp = OperationButtonCardButton()
+        temp.setData(by: OperationButtonData(image: "eczane", titleText: "İl - İlçe Bilgisine Göre Ara"))
         temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.setButtonAction {
+            self.navigationController?.pushViewController(CitySelectionBuilder.build(), animated: true)
+        }
         return temp
     }()
     
@@ -44,13 +50,13 @@ class MainPageViewController: BaseViewController<MainPageViewModel> {
     override func addViewComponents() {
         view.addSubview(stackView)
         
-        stackView.addArrangedSubview(operationButtonByCountry)
         stackView.addArrangedSubview(operationButtonByLocation)
-        
+        stackView.addArrangedSubview(operationButtonByCountry)
+
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32.0),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32.0),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
         ])
     }
 }

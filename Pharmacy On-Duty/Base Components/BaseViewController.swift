@@ -40,18 +40,22 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
         nav.largeTitleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 32, weight: .bold)]
         
         let navBar = self.navigationController?.navigationBar
+        
+        navBar?.tintColor = .black
         navBar?.prefersLargeTitles = true
         navBar?.isTranslucent = true
         navBar?.standardAppearance = nav
         navBar?.scrollEdgeAppearance = nav
         navBar?.compactAppearance = nav
+        
         navigationItem.setValue(true, forKey: "__largeTitleTwoLineMode")
+        
         prepareActivityIndicator()
     }
     
     private func prepareActivityIndicator() {
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        activityIndicator.color = .white
+        activityIndicator.color = .black
         let barButton = UIBarButtonItem(customView: activityIndicator)
         self.navigationItem.setRightBarButton(barButton, animated: true)
     }

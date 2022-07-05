@@ -9,7 +9,10 @@ import Foundation
 import Alamofire
 
 enum EndpointCases: Endpoint {
-    case getByLocation(city: String)
+    case getByLocation(String, String)
+    case getByManuel(String, String)
+    case getCountryList(String)
+    case getCities
     
     var apiKey: String {
         return ""
@@ -25,8 +28,17 @@ enum EndpointCases: Endpoint {
     
     var path: String {
         switch self {
-        case .getByLocation(city: let city):
-            return "city=\(city)"
+        case .getByLocation(let latitude, let longitude):
+            return "/distance?latitude=\(latitude)&longitude=\(longitude)"
+            
+        case .getByManuel(let city, let country):
+            return "?city=\(city)&county=\(country)"
+            
+        case .getCountryList(let city):
+            return "/city?city=\(city)"
+        
+        case .getCities:
+            return "/city?"
         }
     }
     
@@ -35,9 +47,6 @@ enum EndpointCases: Endpoint {
     }
     
     var body: [String : Any]? {
-        switch self {
-        case .getByLocation:
-            return [:]
-        }
+        return [:]
     }
 }

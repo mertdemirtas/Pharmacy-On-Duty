@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OperationButtonCardView: BaseButton<OperationButtonData> {
+class OperationButtonCardButton: BaseButton<OperationButtonData> {
     
     private lazy var operationContainerView: OperationButtonContainerView = {
         let temp = OperationButtonContainerView()

@@ -9,5 +9,5 @@ import Foundation
 
 struct NetworkConstants {
     static let apiToken = "765lPNMNerBSZKjVyGt58VFQarHYvfcjNOk7kQkyjWzCbbGwwWdeeUPHEqgU"
-    static let apiURL = "https://www.nosyapi.com/apiv2/pharmacy?"
+    static let apiURL = "https://www.nosyapi.com/apiv2/pharmacy"
 }
