@@ -21,10 +21,10 @@ class GenericTableViewCell<Data, View: GenericBaseView<Data>>: BaseTableViewCell
     
     override func setupViewConfigurations() {
         NSLayoutConstraint.activate([
-            genericView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8.0),
+            genericView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10.0),
             genericView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16.0),
             genericView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16.0),
-            genericView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8.0)
+            genericView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10.0)
         ])
     }
     

@@ -23,7 +23,7 @@ class PharmacyListCardButton: BaseButton<PharmacyListCardData> {
         temp.numberOfLines = 0
         temp.textAlignment = .center
         temp.textColor = .systemGreen
-        temp.font = UIFont.boldSystemFont(ofSize: 15)
+        temp.font = UIFont.boldSystemFont(ofSize: 17)
         temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
@@ -42,10 +42,10 @@ class PharmacyListCardButton: BaseButton<PharmacyListCardData> {
         stackView.addArrangedSubview(pharmacyListCardContainerView)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10.0),
-            stackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10.0),
-            stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,constant: -10.0),
-            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor,constant: -10.0),
+            stackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 16.0),
+            stackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16.0),
+            stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,constant: -16.0),
+            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor,constant: -16.0),
             
             distance.widthAnchor.constraint(equalToConstant: 50.0)
         ])
@@ -53,7 +53,7 @@ class PharmacyListCardButton: BaseButton<PharmacyListCardData> {
     
     override func loadDataView() {
         guard let data = returnData() else { return }
-        _ = (data.distance?.isEmpty ?? true) ? (distance.isHidden = true) : (distance.text = data.distance)
+        _ = (data.distance?.isEmpty ?? true) ? (distance.isHidden = true) : (distance.text = ((data.distance ?? "0") + " km"))
         pharmacyListCardContainerView.setData(by: PharmacyListCardContainerData(title: data.title, adress: data.adress))
     }
 }

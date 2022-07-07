@@ -22,12 +22,7 @@ class BaseTableView: UITableView {
         self.backgroundView = UIView()
         self.backgroundColor = .clear
         self.backgroundView!.backgroundColor = .appBackgroundColor
-        prepareSeperator()
-    }
-    
-    open func prepareSeperator() {
-        separatorInset = .zero
-        separatorColor = .white
+        separatorStyle = .none
     }
     
     private func register<T: BaseTableViewCell>(cell: T.Type) {
@@ -38,13 +33,5 @@ class BaseTableView: UITableView {
         for cell in cells {
             register(cell: cell.self)
         }
-    }
-}
-
-extension BaseTableView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let animateDelay = 0.20
-        cell.alpha = 0
-        UIView.animate(withDuration: animateDelay, animations: { cell.alpha = 1 })
     }
 }

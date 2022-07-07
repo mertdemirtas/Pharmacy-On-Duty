@@ -29,16 +29,9 @@ class ResultPageViewController: BaseViewController<ResultPageViewModel> {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        initLocationManager()
         setupTableView()
         bindTableView()
         viewModel.controlData()
-    }
-    
-    private func initLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.requestAlwaysAuthorization()
     }
     
     private func setupTableView() {
@@ -70,24 +63,5 @@ class ResultPageViewController: BaseViewController<ResultPageViewModel> {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-    }
-}
-
-extension ResultPageViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .notDetermined:
-            break
-        case .restricted:
-            break
-        case .denied:
-            break
-        case .authorizedAlways:
-            print("always")
-        case .authorizedWhenInUse:
-            print("inuse")
-        @unknown default:
-            break
-        }
     }
 }

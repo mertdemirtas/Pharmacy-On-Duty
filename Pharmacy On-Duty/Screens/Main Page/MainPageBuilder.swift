@@ -10,7 +10,8 @@ import UIKit
 
 class MainPageBuilder {
     class func build() -> UIViewController {
-        let viewModel = MainPageViewModel()
+        let locationManager = LocationManager()
+        let viewModel = MainPageViewModel(locationManager: locationManager)
         let viewController = MainPageViewController(viewModel: viewModel)
         viewController.title = "Nöbetçi Eczane"
         return viewController

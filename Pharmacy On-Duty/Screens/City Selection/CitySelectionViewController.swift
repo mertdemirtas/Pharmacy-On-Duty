@@ -51,6 +51,7 @@ class CitySelectionViewController: BaseViewController<CitySelectionViewModel> {
                 return cell
 
             case .empty:
+                // TODO: Empty cell
                 return UITableViewCell()
             }
         }

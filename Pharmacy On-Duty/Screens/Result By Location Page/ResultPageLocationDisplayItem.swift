@@ -5,4 +5,6 @@
 //  Created by Mert Demirtaş on 4.07.2022.
 //
 
-import Foundation
+enum ResultPageLocationDisplayItem {
+    case result(DistanceData)
+}

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MainPageViewController: BaseViewController<MainPageViewModel> {
     // MARK: Constants
@@ -26,7 +27,7 @@ class MainPageViewController: BaseViewController<MainPageViewModel> {
         temp.setData(by: OperationButtonData(image: "location", titleText: "Şu Anki Konumuma Göre Ara"))
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.setButtonAction {
-         //   self.navigationController?.pushViewController(ResultPageBuilder.build(), animated: true)
+            self.navigationController?.pushViewController(ResultPageLocationBuilder.build(), animated: true)
         }
         return temp
     }()
@@ -40,7 +41,7 @@ class MainPageViewController: BaseViewController<MainPageViewModel> {
         }
         return temp
     }()
-    
+        
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

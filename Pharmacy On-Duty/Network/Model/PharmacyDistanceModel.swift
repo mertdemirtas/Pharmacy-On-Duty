@@ -14,20 +14,32 @@ import Foundation
 
 // MARK: - PharmacyDistanceModel
 struct PharmacyDistanceModel: Codable {
-    let status, message: String?
-    let systemTime, rowCount: Int?
-    let data: [DistanceData]?
+    var status, message: String?
+    var systemTime, rowCount: Int?
+    var data: [DistanceData]?
 }
 
 // MARK: - DistanceData
 struct DistanceData: Codable {
-    let eczaneAdi, adresi, semt: String?
-    let yolTarifi: String?
-    let telefon: String?
-    let telefon2: String?
-    let sehir: String?
-    let ilce: String?
-    let latitude, longitude: Double?
-    let distanceMT: Int?
-    let distanceKM, distanceMil: Double?
+    var eczaneAdi, adresi, semt, yolTarifi: String?
+    var telefon, telefon2: String?
+    var sehir: String?
+    var ilce: String?
+    var latitude, longitude: Double?
+    var distanceMT: Int?
+    var distanceKM, distanceMil: Double?
+
+    enum CodingKeys: String, CodingKey {
+        case eczaneAdi = "EczaneAdi"
+        case adresi = "Adresi"
+        case semt = "Semt"
+        case yolTarifi = "YolTarifi"
+        case telefon = "Telefon"
+        case telefon2 = "Telefon2"
+        case sehir = "Sehir"
+        case ilce, latitude, longitude
+        case distanceMT = "distanceMt"
+        case distanceKM = "distanceKm"
+        case distanceMil
+    }
 }
