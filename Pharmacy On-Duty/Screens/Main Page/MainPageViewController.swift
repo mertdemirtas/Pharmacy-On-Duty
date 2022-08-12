@@ -27,7 +27,8 @@ class MainPageViewController: BaseViewController<MainPageViewModel> {
         temp.setData(by: OperationButtonData(image: "location", titleText: "Şu Anki Konumuma Göre Ara"))
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.setButtonAction {
-            self.navigationController?.pushViewController(ResultPageLocationBuilder.build(), animated: true)
+            self.checkLocationPermission()
+            self.navigationController?.pushViewController(ResultPageBuilder.buildWithCurrentLocation(currentLocation: self.locationManager.getLocation()), animated: true)
         }
         return temp
     }()
@@ -41,10 +42,36 @@ class MainPageViewController: BaseViewController<MainPageViewModel> {
         }
         return temp
     }()
-        
+    
+    private lazy var alertViewController: LocationPermissonAlertViewController = {
+        let temp = LocationPermissonAlertViewController()
+        temp.modalPresentationStyle = .overCurrentContext
+        return temp
+    }()
+    
+    private let locationManager = LocationManager()
+    
     // MARK: Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.requestLocationPermission()
+    }
+    
+    private func checkLocationPermission() {
+        locationManager.controlLocationPermission(completionHandler: { [weak self] status in
+            switch status {
+            case .usable:
+                break
+            case .unusable:
+                self?.present(alertViewController, animated: true)
+            case .notDetermined:
+                break
+            }
+        })
     }
     
     // MARK: Override Methods
@@ -53,7 +80,7 @@ class MainPageViewController: BaseViewController<MainPageViewModel> {
         
         stackView.addArrangedSubview(operationButtonByLocation)
         stackView.addArrangedSubview(operationButtonByCountry)
-
+        
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32.0),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32.0),

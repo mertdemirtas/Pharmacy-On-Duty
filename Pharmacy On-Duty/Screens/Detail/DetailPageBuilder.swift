@@ -8,10 +8,10 @@
 import UIKit
 
 class DetailPageBuilder {
-    class func build(data: Datum) -> UIViewController{
+    class func build(data: ResultPageData) -> UIViewController{
         let viewModel = DetailPageViewModel(data: data)
         let viewController = DetailPageViewController(viewModel: viewModel)
-        viewController.title = data.eczaneAdi
+        viewController.title = data.title
         return viewController
     }
 }

@@ -10,35 +10,58 @@ import CoreLocation
 
 class LocationManager: CLLocationManager {
     private var status: LocationEnum?
+    public var locationManagerDelegate: ResultPageLocationListProtocol?
+    
+    public func requestLocationPermission() {
+        requestWhenInUseAuthorization()
+        status = LocationEnum.init(permission: authorizationStatus)
+    }
     
     public func controlLocationPermission(completionHandler: (LocationEnum) -> Void) {
         status = LocationEnum.init(permission: authorizationStatus)
         
         switch status {
-        case .unsuable:
-            requestWhenInUseAuthorization()
+        case .unusable:
             status = LocationEnum.init(permission: authorizationStatus)
-            completionHandler(status ?? .unsuable)
+            completionHandler(status ?? .unusable)
             
         case .usable:
             completionHandler(status ?? .usable)
             
+        case .notDetermined:
+            requestWhenInUseAuthorization()
+            status = LocationEnum.init(permission: authorizationStatus)
+            completionHandler(status ?? .notDetermined)
+            
         case .none:
             requestWhenInUseAuthorization()
             status = LocationEnum.init(permission: authorizationStatus)
-            completionHandler(status ?? .unsuable)
+            completionHandler(status ?? .unusable)
+            
         }
     }
     
     public func getStatus() -> LocationEnum {
-        return status ?? .unsuable
+        return status ?? .unusable
     }
     
-    public func getLocation() -> CLLocation {
-        guard let location = location else { return CLLocation() }
-        return location
+    public func getLocation() -> CLLocationCoordinate2D {
+        guard let location = location else { return CLLocationCoordinate2D() }
+        return CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+    }
+    
+    public func getCoordinates(address: String){
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address) { (placemarks, error) in
+            guard let placemarks = placemarks, let location = placemarks.first?.location else { return }
+            self.locationManagerDelegate?.appendLocationToList(with: location.coordinate)
+            
+            guard let newAddress = self.locationManagerDelegate?.getNextItem() else {
+                self.locationManagerDelegate?.reloadList()
+                return
+            }
+            
+            self.getCoordinates(address: newAddress)
+        }
     }
 }
-
-
- 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class DetailPageViewController: BaseViewController<DetailPageViewModel> {
     // MARK: Components
@@ -14,7 +15,6 @@ class DetailPageViewController: BaseViewController<DetailPageViewModel> {
         temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
-    
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -28,9 +28,10 @@ class DetailPageViewController: BaseViewController<DetailPageViewModel> {
         view.addSubview(cardView)
         
         NSLayoutConstraint.activate([
-            cardView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            cardView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            cardView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            cardView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16.0),
+            cardView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
+            cardView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
+            cardView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16.0)
         ])
     }
     

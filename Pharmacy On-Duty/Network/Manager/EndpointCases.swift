@@ -7,10 +7,11 @@
 
 import Foundation
 import Alamofire
+import CoreLocation
 
 enum EndpointCases: Endpoint {
-    case getByLocation(String, String)
-    case getByManuel(String, String)
+    case getByLocation(currentLocation: CLLocationCoordinate2D)
+    case getByManuel(city: String, country: String)
     case getCountryList(String)
     case getCities
     
@@ -28,8 +29,8 @@ enum EndpointCases: Endpoint {
     
     var path: String {
         switch self {
-        case .getByLocation(let latitude, let longitude):
-            return "/distance?latitude=\(latitude)&longitude=\(longitude)"
+        case .getByLocation(let currentLocation):
+            return "/distance?latitude=\(currentLocation.latitude)&longitude=\(currentLocation.longitude)"
             
         case .getByManuel(let city, let country):
             return "?city=\(city)&county=\(country)"

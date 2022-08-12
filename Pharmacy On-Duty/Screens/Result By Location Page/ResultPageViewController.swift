@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import RxSwift
 import CoreLocation
 
-class ResultPageViewController: BaseViewController<ResultPageLocationViewModel> {
+class ResultPageViewController: BaseViewController<ResultPageViewModel> {
     
     private var locationManager = LocationManager()
     
@@ -31,7 +32,7 @@ class ResultPageViewController: BaseViewController<ResultPageLocationViewModel> 
     }
     
     private func setupTableView() {
-        tableView.registerCell(cells: [PharmacyListTableViewCell.self])
+        tableView.registerCell(cells: [PharmacyListTableViewCell.self, EmptyResultCell.self])
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
@@ -55,6 +56,9 @@ class ResultPageViewController: BaseViewController<ResultPageLocationViewModel> 
                 cell.genericView.setButtonAction {
                     self.navigationController?.pushViewController(DetailPageBuilder.build(data: data), animated: true)
                 }
+                return cell
+            case .empty:
+                let cell: EmptyResultCell = self.tableView.dequeueReusableCell(withIdentifier: "EmptyResultCell", for: IndexPath(item: index, section: 0)) as! EmptyResultCell
                 return cell
             }
         }

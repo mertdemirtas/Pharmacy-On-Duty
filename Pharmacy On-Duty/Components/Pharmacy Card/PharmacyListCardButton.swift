@@ -18,12 +18,31 @@ class PharmacyListCardButton: BaseButton<PharmacyListCardData> {
         return temp
     }()
     
-    private lazy var distance: BaseLabel = {
+    private lazy var stackViewDistance: UIStackView = {
+        let temp = UIStackView()
+        temp.axis = .vertical
+        temp.spacing = 4.0
+        temp.distribution = .fill
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
+    private lazy var distanceLabel: BaseLabel = {
         let temp = BaseLabel()
         temp.numberOfLines = 0
         temp.textAlignment = .center
-        temp.textColor = .systemGreen
-        temp.font = UIFont.boldSystemFont(ofSize: 17)
+        temp.textColor = .black
+        temp.font = UIFont.boldSystemFont(ofSize: 16)
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
+    private lazy var distanceImage: UIImageView = {
+        let temp = UIImageView()
+        temp.image = UIImage(systemName: "mappin.and.ellipse")
+        temp.tintColor = .systemBlue
+        temp.widthAnchor.constraint(equalToConstant: 38.0).isActive = true
+        temp.heightAnchor.constraint(equalToConstant: 34.0).isActive = true
         temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
@@ -37,8 +56,6 @@ class PharmacyListCardButton: BaseButton<PharmacyListCardData> {
     // MARK: Override Methods
     override func addMajorViewComponents() {
         containerView.addSubview(stackView)
-        
-        stackView.addArrangedSubview(distance)
         stackView.addArrangedSubview(pharmacyListCardContainerView)
         
         NSLayoutConstraint.activate([
@@ -47,13 +64,19 @@ class PharmacyListCardButton: BaseButton<PharmacyListCardData> {
             stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,constant: -16.0),
             stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor,constant: -16.0),
             
-            distance.widthAnchor.constraint(equalToConstant: 50.0)
+            distanceLabel.widthAnchor.constraint(equalToConstant: 50.0)
         ])
     }
     
     override func loadDataView() {
         guard let data = returnData() else { return }
-        _ = (data.distance?.isEmpty ?? true) ? (distance.isHidden = true) : (distance.text = ((data.distance ?? "0") + " km"))
         pharmacyListCardContainerView.setData(by: PharmacyListCardContainerData(title: data.title, adress: data.adress))
+        
+        guard let distance = data.distance else { return }
+        
+        stackView.insertArrangedSubview(stackViewDistance, at: 0)
+        stackViewDistance.addArrangedSubview(distanceImage)
+        stackViewDistance.addArrangedSubview(distanceLabel)
+        distanceLabel.text = String(format: "%.2f", distance) + " km"
     }
 }

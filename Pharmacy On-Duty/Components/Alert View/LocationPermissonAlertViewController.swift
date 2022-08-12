@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class LocationPermissonAlertViewController: BaseTwoButtonAlertController {
+class LocationPermissonAlertViewController: BaseTwoButtonAlertViewController {
     
     // MARK: Lifecycle
     override func viewDidLoad() {

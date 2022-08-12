@@ -6,27 +6,62 @@
 //
 
 import UIKit
+import MapKit
 
-class PharmacyDetailCardView: GenericBaseView<Datum> {
+class PharmacyDetailCardView: GenericBaseView<ResultPageData> {
+    private lazy var stackView: UIStackView = {
+        let temp = UIStackView()
+        temp.spacing = 20
+        temp.axis = .vertical
+        temp.distribution = .fill
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
     private lazy var containerView: PharmacyDetailContainerView = {
         let temp = PharmacyDetailContainerView()
         temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
     
+    private lazy var mapView: Map = {
+        let temp = Map()
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
+    private lazy var openToMapsButton: OpenToMapsButton = {
+        let temp = OpenToMapsButton()
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
     override func addMajorViewComponents() {
-        addSubview(containerView)
+        addSubview(stackView)
+        
+        stackView.addArrangedSubview(containerView)
         
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: topAnchor, constant: 16.0),
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16.0),
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 16.0)
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     
     override func loadDataView() {
         guard let data = returnData() else { return }
-        containerView.setData(by: data)
+        containerView.setData(by: DetailContainerData(eczaneName: data.title, phoneNumber: data.phoneNumber, adress: data.adress))
+        
+        guard let destinationLocation = data.destinationLocation else { return }
+        
+        stackView.addArrangedSubview(mapView)
+        
+        let locationData = MapViewData(pharmacyName: data.title, destinationLocation: destinationLocation)
+        mapView.setData(coordinationData: locationData)
+        mapView.drawMap()
+        
+        openToMapsButton.setData(by: locationData)
+        stackView.addArrangedSubview(openToMapsButton)
     }
 }

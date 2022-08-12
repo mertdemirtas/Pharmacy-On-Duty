@@ -2,9 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Uygulama hiç bir şekilde kişisel verilerinize erişmeyecektir. Konum bilgisine izin vermeniz yakınınızda bulunan nöbetçi eczaneleri bulmanızı sağlar.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Uygulama hiç bir şekilde kişisel verilerinize erişmeyecektir. Konum bilgisine izin vermeniz yakınınızda bulunan nöbetçi eczaneleri bulmanızı sağlar.</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>LSSupportsOpeningDocumentsInPlace</string>
+			<key>LSHandlerRank</key>
+			<string>YES</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>CFBundleDocumentTypes</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>LSHandlerRank</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+		</dict>
+	</array>
+	<key>MKDirectionsApplicationSupportedModes</key>
+	<array/>
 </dict>
 </plist>

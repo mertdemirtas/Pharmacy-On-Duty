@@ -33,6 +33,8 @@ class BaseButton<T>: GenericBaseView<T>, UIGestureRecognizerDelegate {
     
     lazy var buttonLabel: BaseLabel = {
         let temp = BaseLabel()
+        temp.textAlignment = .center
+        temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
     

@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import CoreLocation
+
+struct ResultPageData {
+    let title: String?
+    let adress: String?
+    let destinationLocation: CLLocationCoordinate2D?
+    let distance: Double?
+    let phoneNumber: String?
+}

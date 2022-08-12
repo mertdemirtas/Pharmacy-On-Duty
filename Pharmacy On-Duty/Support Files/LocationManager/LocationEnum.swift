@@ -9,16 +9,17 @@ import CoreLocation
 
 enum LocationEnum {
     case usable
-    case unsuable
+    case notDetermined
+    case unusable
     
     init(permission: CLAuthorizationStatus) {
         switch permission {
         case .notDetermined:
-            self = .unsuable
+            self = .notDetermined
         case .restricted:
-            self = .unsuable
+            self = .unusable
         case .denied:
-            self = .unsuable
+            self = .unusable
         case .authorizedAlways:
             self = .usable
         case .authorizedWhenInUse:
@@ -26,7 +27,7 @@ enum LocationEnum {
         case .authorized:
             self = .usable
         @unknown default:
-            self = .unsuable
+            self = .unusable
         }
     }
 }

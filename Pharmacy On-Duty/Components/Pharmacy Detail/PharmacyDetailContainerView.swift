@@ -7,9 +7,9 @@
 
 import UIKit
 
-class PharmacyDetailContainerView: GenericBaseView<Datum> {
+class PharmacyDetailContainerView: GenericBaseView<DetailContainerData> {
     // MARK: Constants
-    private let spacingValue: CGFloat = 8.0
+    private let spacingValue: CGFloat = 12.0
     
     // MARK: Components
     private lazy var stackView: UIStackView = {
@@ -21,54 +21,56 @@ class PharmacyDetailContainerView: GenericBaseView<Datum> {
         return temp
     }()
     
+    private lazy var adressStackView: UIStackView = {
+        let temp = UIStackView()
+        temp.distribution = .fill
+        temp.axis = .vertical
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
+    private lazy var adressLabel: BaseLabel = {
+        let temp = BaseLabel()
+        temp.text = "Adres"
+        temp.numberOfLines = 0
+        temp.textColor = .systemRed
+        temp.font = UIFont.boldSystemFont(ofSize: 21)
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
     private lazy var adress: BaseLabel = {
         let temp = BaseLabel()
         temp.numberOfLines = 0
         temp.textColor = .black
+        temp.font = .systemFont(ofSize: 17, weight: .regular)
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
+    private lazy var phoneNumberStackView: UIStackView = {
+        let temp = UIStackView()
+        temp.distribution = .fill
+        temp.axis = .vertical
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        return temp
+    }()
+    
+    private lazy var phoneNumberLabel: BaseLabel = {
+        let temp = BaseLabel()
+        temp.text = "Telefon"
+        temp.numberOfLines = 0
+        temp.textColor = .systemRed
         temp.font = UIFont.boldSystemFont(ofSize: 21)
         temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
     
-    private lazy var district: BaseLabel = {
-        let temp = BaseLabel()
-        temp.textColor = .black
-        temp.font = UIFont.boldSystemFont(ofSize: 22)
-        temp.translatesAutoresizingMaskIntoConstraints = false
-        return temp
-    }()
-    
-    private lazy var directions: BaseLabel = {
+    private lazy var phoneNumber: BaseLabel = {
         let temp = BaseLabel()
         temp.numberOfLines = 0
-        temp.translatesAutoresizingMaskIntoConstraints = false
-        return temp
-    }()
-    
-    private lazy var phoneNumber: UITextView = {
-        let temp = UITextView()
-        temp.textContainer.maximumNumberOfLines = 1
-        temp.backgroundColor = .clear
-        temp.isEditable = false
-        temp.textAlignment = .left
         temp.textColor = .black
-        temp.isScrollEnabled = false
-        temp.textInputView.contentMode = .left
-        temp.font = UIFont.boldSystemFont(ofSize: 21)
-        temp.dataDetectorTypes = .phoneNumber
-        temp.textInputView.translatesAutoresizingMaskIntoConstraints = false
-        temp.translatesAutoresizingMaskIntoConstraints = false
-        return temp
-    }()
-    
-    private lazy var city: BaseLabel = {
-        let temp = BaseLabel()
-        temp.translatesAutoresizingMaskIntoConstraints = false
-        return temp
-    }()
-    
-    private lazy var country: BaseLabel = {
-        let temp = BaseLabel()
+        temp.font = .systemFont(ofSize: 17, weight: .regular)
         temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
@@ -76,9 +78,15 @@ class PharmacyDetailContainerView: GenericBaseView<Datum> {
     override func addMajorViewComponents() {
         addSubview(stackView)
         
-        stackView.addArrangedSubview(district)
-        stackView.addArrangedSubview(phoneNumber)
-        stackView.addArrangedSubview(adress)
+        stackView.addArrangedSubview(adressStackView)
+        
+        adressStackView.addArrangedSubview(adressLabel)
+        adressStackView.addArrangedSubview(adress)
+        
+        stackView.addArrangedSubview(phoneNumberStackView)
+        
+        phoneNumberStackView.addArrangedSubview(phoneNumberLabel)
+        phoneNumberStackView.addArrangedSubview(phoneNumber)
         
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
@@ -91,15 +99,7 @@ class PharmacyDetailContainerView: GenericBaseView<Datum> {
     override func loadDataView() {
         guard let data = returnData() else { return }
         
-        district.text = "Semt:"
-        district.addText(text: data.semt ?? "")
-        
-        phoneNumber.text = "Telefon: " + "\(data.telefon ?? "")" + ", " + "\(data.telefon ?? "")"
-//        phoneNumber.addText(text: data.telefon ?? "")
-//        phoneNumber.addText(text: data.telefon2 ?? "")
-        
-        adress.text = "Adres:"
-        adress.addText(text: data.adresi ?? "")
+        phoneNumber.text = data.phoneNumber
+        adress.text = data.adress
     }
-
 }

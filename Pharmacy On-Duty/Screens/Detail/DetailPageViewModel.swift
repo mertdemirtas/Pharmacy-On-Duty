@@ -6,14 +6,14 @@
 //
 
 class DetailPageViewModel: BaseViewModel {
-    private var data: Datum
+    private var data: ResultPageData
     
-    init(data: Datum) {
+    init(data: ResultPageData) {
         self.data = data
         super.init()
     }
     
-    public func getData() -> Datum {
+    public func getData() -> ResultPageData {
         return data
     }
 }

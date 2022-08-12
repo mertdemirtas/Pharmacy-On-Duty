@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class CountrySelectionViewController: BaseViewController<CountrySelectionViewModel> {
     // MARK: Components
@@ -46,7 +47,7 @@ class CountrySelectionViewController: BaseViewController<CountrySelectionViewMod
                 let cell : CityCardTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "CityCardTableViewCell", for: IndexPath(item: index, section: 0)) as! CityCardTableViewCell
                 cell.setData(data: CityData(name: data.ilceAd))
                 cell.genericView.setButtonAction {
-                    self.navigationController?.pushViewController(ResultPageBuilder.build(city: self.viewModel.cityName ?? "", country: data.ilceSlug ?? ""), animated: true)
+                    self.navigationController?.pushViewController(ResultPageBuilder.buildWithCityAndCountry(city: self.viewModel.cityName ?? "", country: data.ilceSlug ?? ""), animated: true)
                 }
                 return cell
 

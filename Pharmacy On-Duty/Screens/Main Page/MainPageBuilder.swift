@@ -13,7 +13,7 @@ class MainPageBuilder {
         let locationManager = LocationManager()
         let viewModel = MainPageViewModel(locationManager: locationManager)
         let viewController = MainPageViewController(viewModel: viewModel)
-        viewController.title = "Nöbetçi Eczane"
+        viewController.title = "Nöbetçi Eczacım"
         return viewController
     }
 }
